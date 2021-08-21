@@ -75,7 +75,7 @@ function(){
     const undateInputField=document.getElementById('promo-text');
     const inputTexts=undateInputField.value;
     undateInputField.value='';
-    if(inputTexts == 'stevekaku'){
+    if(inputTexts == 'stevekaku '){
         
         const totalCount=document.getElementById('total-prices');
         const countText=parseFloat(totalCount.innerText);
