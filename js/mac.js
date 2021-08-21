@@ -1,3 +1,4 @@
+// get the id and price different 
 function macPro(priceId,prices){
     const priceField=document.getElementById(priceId);
     priceField.innerText=prices;
@@ -7,7 +8,7 @@ function macPro(priceId,prices){
 
 }
 
- 
+//  calculate total price 
 function total(){
     let memoryCost=document.getElementById('extra-memory');
     let newMemoryCost=parseInt(memoryCost.innerText);
@@ -15,41 +16,38 @@ function total(){
     let newStorageCost=parseInt(storageCost.innerText);
     let deliveryCost=document.getElementById('delivery-charge');
     let newDeliveryCost=parseInt(deliveryCost.innerText);
-
+    //  total price 
     let totalAccount= (newMemoryCost + newStorageCost + newDeliveryCost)+1299;
     const totalBil=document.getElementById('total-prices');
     totalBil.innerText=totalAccount;
 
-
+//    set total cost and dispaly 
     const discountOffer=document.getElementById('promo-code');
     discountOffer.innerText=totalAccount;
    
 
 }
 
-function cuponCode(){
-    let count=0;
-    const button=document.getElementById('pr')
-}
 
 
 
+// memory 
 document.getElementById('unified').addEventListener('click',
 function(){
    macPro('extra-memory',0);
-//    total('extra-memory',100)
+
 });
 document.getElementById('unified memory').addEventListener('click',
 function(){
    macPro('extra-memory',180)
-//    total('extra-memory',50);
+
 });
 
 // storage 
 document.getElementById('first-storage').addEventListener('click',
 function(){
     macPro('extra-storage',0)
-    // total('extra-storage',10)
+   
 });
 document.getElementById('second-storage').addEventListener('click',
 function(){
@@ -71,25 +69,24 @@ function(){
 });
 
 
-
+// promo code 
 document.getElementById('promo').addEventListener('click',
 function(){
     const undateInputField=document.getElementById('promo-text');
     const inputTexts=undateInputField.value;
     undateInputField.value='';
     if(inputTexts == 'stevekaku'){
-        const totalCount=document.getElementById('promo-code');
+        
+        const totalCount=document.getElementById('total-prices');
         const countText=parseFloat(totalCount.innerText);
         const totalValues=(countText * 20)/100;
         const updateDiscount= countText - totalValues;
-        totalCount.innerText=updateDiscount;
+        document.getElementById('promo-code').innerText=updateDiscount;
         const success=document.getElementById('success');
         success.style.display='block';
+      
         }
-         let count=0;
-        if(count==1){
-            button.setAttribute('disabled,true');
-        }
-
+       
         
-})
+        
+});
